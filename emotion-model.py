@@ -1,8 +1,25 @@
-import cv2  # OpenCV for image/video processing
-from deepface import DeepFace  # DeepFace for facial emotion recognition
+import cv2
+from deepface import DeepFace
+from collections import deque
+import time
+from collections import Counter
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
+
+# Variable to hold the current dominant emotion
+current_emotion = None
+
+# Create a deque with a fixed size of 10 (queue)
+emotion_history = deque(maxlen=10)
+
+# Time tracking variables
+last_print_time = time.time()
+last_add_time = time.time()
+
+# Set the sample rate (0.1 seconds)
+sample_rate = 0.1
+print_rate = 1.0  # Print most frequent emotion every 1 second
 
 # Loop to continuously capture frames
 while True:
@@ -21,9 +38,26 @@ while True:
         cv2.putText(frame, f'Emotion: {dominant_emotion}', (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2, cv2.LINE_AA)
     except Exception as e:
         print(f"Error in emotion detection: {e}")
-    
+
     # Display the resulting frame
     cv2.imshow("Emotion Recognition", frame)
+
+    # Add the current emotion to the history every 0.1 seconds
+    if time.time() - last_add_time >= sample_rate:
+        # Add the current emotion to the history (deque with max size 10)
+        emotion_history.append(dominant_emotion)
+        last_add_time = time.time()  # Update the time for the next 0.1 second interval
+
+    # Print the most frequent emotion every 1 second
+    if time.time() - last_print_time >= print_rate:
+        if len(emotion_history) > 0:
+            # Find the most frequent emotion in the queue (deque)
+            most_frequent_emotion = Counter(emotion_history).most_common(1)[0][0]
+
+            # Print the most frequent emotion
+            print(f"Current Most Frequent Emotion: {most_frequent_emotion}")
+        
+        last_print_time = time.time()  # Update the time for the next 1 second interval
 
     # Exit if the user presses the 'q' key
     if cv2.waitKey(1) & 0xFF == ord('q'):
