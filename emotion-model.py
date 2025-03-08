@@ -66,13 +66,13 @@ while True:
             # Print the most frequent emotion
             print(f"Current Most Frequent Emotion: {most_frequent_emotion}")
 
-            if music_selected and most_frequent_emotion != "neutral" and most_frequent_emotion != None:
+            if music_selected and most_frequent_emotion != None:
                 if not music_playing:
                     play_sound(most_frequent_emotion)
                     music_playing = True
                     music_start_time = time.time()  # Start the music timer
                 else:
-                    if time.time() - music_start_time >= 3:
+                    if time.time() - music_start_time >= 5:
                         stop_sound()
                         music_playing = False
                         music_start_time = None
