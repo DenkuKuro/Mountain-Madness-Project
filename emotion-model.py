@@ -3,6 +3,7 @@ from deepface import DeepFace
 from collections import deque
 import time
 from collections import Counter
+from sound_player import play_sound, stop_sound
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
@@ -16,6 +17,14 @@ emotion_history = deque(maxlen=10)
 # Time tracking variables
 last_print_time = time.time()
 last_add_time = time.time()
+
+# Music variables
+# Flag to check if music is selected
+music_selected = True
+# Music start time
+music_start_time = None  
+# Flag to check if music is playing
+music_playing = False
 
 # Set the sample rate (0.1 seconds)
 sample_rate = 0.1
@@ -56,7 +65,18 @@ while True:
 
             # Print the most frequent emotion
             print(f"Current Most Frequent Emotion: {most_frequent_emotion}")
-        
+
+            if music_selected and most_frequent_emotion != "neutral" and most_frequent_emotion != None:
+                if not music_playing:
+                    play_sound(most_frequent_emotion)
+                    music_playing = True
+                    music_start_time = time.time()  # Start the music timer
+                else:
+                    if time.time() - music_start_time >= 3:
+                        stop_sound()
+                        music_playing = False
+                        music_start_time = None
+                    
         last_print_time = time.time()  # Update the time for the next 1 second interval
 
     # Exit if the user presses the 'q' key
