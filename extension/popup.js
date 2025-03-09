@@ -47,6 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const result = await response.json();
             if (result && result.emotion) {
                 emotionDisplay.textContent = `Detected Emotion: ${result.emotion}`;
+
+                // Send the emotion data to content script
+                chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+                    chrome.tabs.sendMessage(tabs[0].id, {
+                        action: 'changeBackground',
+                        emotion: result.emotion.toLowerCase()
+                    });
+                });
             } else {
                 console.error('Invalid API response:', result);
             }
