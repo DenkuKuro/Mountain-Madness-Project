@@ -39,7 +39,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
         console.log(message.mute);
         // Play the corresponding sound for the detected emotion
-        if (!message.mute) playSound(emotion.toLowerCase());nt
+        if (!message.mute) playSound(emotion.toLowerCase());
+        
         let overlay = document.getElementById('emotion-overlay');
         if (!overlay) {
             overlay = document.createElement('div');
