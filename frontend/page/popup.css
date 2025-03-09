@@ -1,16 +1,125 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+:root {
+  /* Happy */
+  /* --primary-color: #a748f5;
+  --secondary-color: #b669fd;
+  --tertiary-color: #f277ec;
+  --border-color: #ffffff;
+  --toggle-bg: #b669fd;
+  --toggle-active: #f43f5e;
+  --toggle-play: #ff3ace;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Sad */
+  /* --primary-color: #2b6cb0;
+  --secondary-color: #4a90e2;
+  --tertiary-color: #718096;
+  --border-color: #e2e8f0;
+  --toggle-bg: #4a90e2;
+  --toggle-active: #2c5282;
+  --toggle-play: #5a6a7f;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Fear */
+  /* --primary-color: #4a148c;
+  --secondary-color: #6a1b9a;
+  --tertiary-color: #9c27b0;
+  --border-color: #ffffff;
+  --toggle-bg: #6a1b9a;
+  --toggle-active: #ba68c8;
+  --toggle-play: #8e24aa;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Angry */
+  /* --primary-color: #b71c1c;
+  --secondary-color: #d32f2f;
+  --tertiary-color: #ff5252;
+  --border-color: #ffffff;
+  --toggle-bg: #d32f2f;
+  --toggle-active: #f44336;
+  --toggle-play: #ff1744;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Surprised */
+  --primary-color: #ff9800;
+  --secondary-color: #ffb74d;
+  --tertiary-color: #ffcc80;
+  --border-color: #ffffff;
+  --toggle-bg: #ffb74d;
+  --toggle-active: #ff9800;
+  --toggle-play: #ffca28;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  );
+
+  /* Disgust */
+  /* --primary-color: #1b5e20;
+  --secondary-color: #388e3c;
+  --tertiary-color: #66bb6a;
+  --border-color: #ffffff;
+  --toggle-bg: #388e3c;
+  --toggle-active: #4caf50;
+  --toggle-play: #81c784;
+  --text-color: white;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+}
+
+.popup-container {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(95deg, var(--primary-color) 25%, transparent 25%) -50px
+      0,
+    linear-gradient(-15deg, var(--primary-color) 25%, transparent 25%) -50px 0,
+    linear-gradient(25deg, transparent 75%, var(--primary-color) 75%) -50px 0,
+    linear-gradient(-45deg, transparent 75%, var(--primary-color) 75%) -50px 0,
+    linear-gradient(-15deg, transparent 75%, var(--primary-color) 75%) -50px 0;
+  background-color: var(--secondary-color);
+  background-size: 40px 40px;
+}
 
 .popup-container {
   width: 250px;
   height: 300px;
   padding: 10px;
   font-family: "Poppins", sans-serif;
-  color: white;
-  background: linear-gradient(135deg, #4d4d65, #01010f);
+  color: var(--text-color);
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
-  border: 1px solid #7d99be;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  border: 1px solid var(--border-color);
   backdrop-filter: blur(8px);
 }
 
@@ -18,6 +127,7 @@
   width: 20px; /* Adjust width */
   height: auto; /* Maintain aspect ratio */
   display: block;
+  z-index: 1000;
 }
 
 .header {
@@ -32,8 +142,8 @@
 }
 
 .emotion-box {
-  border: 2px solid #7d99be;
-  background: linear-gradient(135deg, #06062c, #1a1a5e);
+  border: 2px solid var(--border-color);
+  background: var(--background-gradient);
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -49,20 +159,18 @@
 
 .label {
   /* font-weight: bold; */
-  font-size: 20px;
-}
-
-.status {
-  font-size: 12px;
-  font-style: italic;
-  color: rgb(113, 11, 11);
-  margin-top: 0px;
+  position: relative;
+  left: 5px;
+  font-size: 15px;
 }
 
 .toggle-cont {
-  width: 45px;
-  height: 15px;
+  width: 65px;
+  height: 35px;
   border-radius: 9999px;
+  margin-left: 0px; /* Adjust this value as needed */
+  position: relative;
+  left: -15px; /* Moves the toggle switch left */
 }
 
 .toggle-cont .toggle-input {
@@ -76,7 +184,7 @@
   padding: 2px;
   width: 100%;
   height: 100%;
-  background: #272727;
+  background: var(--toggle-bg);
   border-radius: 9999px;
   box-sizing: content-box;
   box-shadow: 0px 0px 12px -6px #fefefe;
@@ -84,15 +192,15 @@
 
 .toggle-cont .toggle-label .cont-label-play {
   position: relative;
-  width: 15px;
+  width: 35px;
   aspect-ratio: 1 / 1;
-  background: #5e5e5e;
+  background: var(--toggle-play);
   border-radius: 9999px;
   transition: all 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
 .toggle-cont .toggle-input:checked + .toggle-label .cont-label-play {
-  background: #f43f5e;
+  background: var(--toggle-active);
   transform: translateX(30px);
 }
 
@@ -111,7 +219,7 @@
 }
 
 .toggle-cont .toggle-input:checked + .toggle-label .label-play {
-  width: 8px;
+  width: 15px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -127,7 +235,7 @@
 
 .time-spent {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 10px;
 }
@@ -147,6 +255,7 @@
 
 /* The switch - the box around the speaker*/
 .toggleSwitch {
+  left: 5px;
   width: 20px;
   height: 20px;
   position: relative;
@@ -177,11 +286,13 @@
 .speaker {
   width: 100%;
   height: 100%;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2;
   transition-duration: 0.3s;
+  background-color: var(--primary-color);
 }
 
 .speaker svg {
@@ -219,13 +330,15 @@
 }
 
 #checkboxInput:hover + .toggleSwitch {
-  background-color: rgb(61, 61, 61);
+  background-color: var(--toggle-active);
 }
 .graph {
   width: 100%;
-  border: 2px solid #7d99be;
-  height: 80px;
-  background: #14143a;
+  border: 2px solid var(--border-color);
+  height: 180px;
+  background: var(--background-gradient);
   border-radius: 10px;
   margin-top: 10px;
 }
+
+/* Trying effects */
