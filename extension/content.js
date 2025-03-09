@@ -1,15 +1,16 @@
 let negativeEmotionDetected = false; // Boolean to track negative emotions
 let waitingForUser = false; // Prevents further changes until message disappears
 let cooldownActive = false; // Prevents popups for 3 seconds after closing
+let currentAudio = null;
 
 function playSound(emotion) {
     const soundMap = {
+        "happy": chrome.runtime.getURL('sounds/happy.mp3'),
         "fear": chrome.runtime.getURL('sounds/fear.mp3'),
-        "happy": chrome.runtime.getURL('sounds/happy.wav'),
-        "sad": chrome.runtime.getURL('sounds/sad.wav'),
-        "angry": chrome.runtime.getURL('sounds/angry.wav3'),
-        "surprised": chrome.runtime.getURL('sounds/surprised.wav'),
-        "disgust": chrome.runtime.getURL('sounds/disgust.flac'),
+        "sad": chrome.runtime.getURL('sounds/sad.mp3'),
+        "angry": chrome.runtime.getURL('sounds/angry.mp3'),
+        "surprised": chrome.runtime.getURL('sounds/surprised.mp3'),
+        "disgust": chrome.runtime.getURL('sounds/disgust.mp3'),
     };
 
     const soundFile = soundMap[emotion];
