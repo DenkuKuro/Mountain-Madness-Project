@@ -152,7 +152,7 @@
 }
 
 .emotion-text {
-  margin-left: -60px;
+  margin-left: 0px;
   display: flex;
   flex-direction: column; /* Stack text vertically */
 }
