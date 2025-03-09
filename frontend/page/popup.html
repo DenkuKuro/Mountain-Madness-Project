@@ -1,15 +1,10 @@
 <link href="popup.css" rel="stylesheet" type="text/css" />
 
 <div class="popup-container">
-  <div class="header">
-    <div class="header"></div>
-  </div>
   <div class="content">
     <div class="emotion-box">
-      <img class="icon" src="../assets/image.png" alt="Custom Icon" />
       <div class="emotion-text">
-        <span class="label">Emotion</span>
-        <span class="status">scanning...</span>
+        <span class="label">Emotion detection</span>
       </div>
       <div class="toggle-cont">
         <input class="toggle-input" id="toggle" name="toggle" type="checkbox" />
@@ -23,6 +18,8 @@
 
     <div class="time-spent">
       <span>Camera</span>
+    </div>
+    <div class="graph">
       <label class="switch">
         <input type="checkbox" />
         <!-- From Uiverse.io by vinodjangid07 -->
@@ -77,9 +74,11 @@
         </label>
       </label>
     </div>
-    <div class="graph"></div>
   </div>
 </div>
+
+<!-- Trial for background change -->
+
 
 <script type="module" src="popup.js"></script>
 
