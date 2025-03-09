@@ -3,12 +3,10 @@ from deepface import DeepFace
 from collections import deque
 import time
 from collections import Counter
+from sound_player import play_sound, stop_sound
 
 # Initialize the webcam
 cap = cv2.VideoCapture(0)
-
-# Variable to hold the current dominant emotion
-current_emotion = None
 
 # Create a deque with a fixed size of 10 (queue)
 emotion_history = deque(maxlen=10)
@@ -17,9 +15,20 @@ emotion_history = deque(maxlen=10)
 last_print_time = time.time()
 last_add_time = time.time()
 
+# Music variables
+# Flag to check if music is selected
+music_selected = True
+# Music start time
+music_start_time = None  
+# Flag to check if music is playing
+music_playing = False
+
 # Set the sample rate (0.1 seconds)
 sample_rate = 0.1
 print_rate = 1.0  # Print most frequent emotion every 1 second
+
+# Variable to hold current emotion
+current_playing_emotion = None
 
 # Loop to continuously capture frames
 while True:
@@ -56,7 +65,21 @@ while True:
 
             # Print the most frequent emotion
             print(f"Current Most Frequent Emotion: {most_frequent_emotion}")
-        
+
+            if music_selected and most_frequent_emotion is not None:
+                # If a new emotion appears and either no music is playing or previous emotion was neutral, start playing immediately
+                if not music_playing or current_playing_emotion == "neutral":
+                    play_sound(most_frequent_emotion)
+                    music_playing = True
+                    music_start_time = time.time()
+                    current_playing_emotion = most_frequent_emotion
+                elif music_start_time is not None and time.time() - music_start_time >= 5:
+                    # Ensure the previous emotion plays for at least 5 seconds before switching
+                    stop_sound()
+                    play_sound(most_frequent_emotion)
+                    music_start_time = time.time()
+                    current_playing_emotion = most_frequent_emotion
+
         last_print_time = time.time()  # Update the time for the next 1 second interval
 
     # Exit if the user presses the 'q' key
