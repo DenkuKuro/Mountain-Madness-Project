@@ -1,145 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 .popup-container {
-    width: 250px;
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: #0a0a2a;
-    border-radius: 10px;
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  width: 250px;
+  height: 300px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #4d4d65, #01010f);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+  border: 1px solid #7d99be;
+  backdrop-filter: blur(8px);
+}
+
+.icon {
+  width: 20px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
 }
 
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-}
-
-.star, .settings {
-    cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
 }
 
 .content {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .emotion-box {
-    border: 2px solid #7D99BE;
-    background: #14143a;
-    border-radius: 10px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  border: 2px solid #7d99be;
+  background: linear-gradient(135deg, #06062c, #1a1a5e);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emotion-text {
+  margin-left: -60px;
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
 }
 
 .label {
-    font-weight: bold;
+  /* font-weight: bold; */
+  font-size: 20px;
 }
 
 .status {
-    font-size: 12px;
-    color: gray;
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(113, 11, 11);
+  margin-top: 0px;
 }
 
-button {
-  font-size: 0.4em;
-  padding: 0.4em 0.6em;
-  border-radius: 0.5em;
-  border: none;
-  background-color: #000;
-  color: #fff;
+.toggle-cont {
+  width: 45px;
+  height: 15px;
+  border-radius: 9999px;
+}
+
+.toggle-cont .toggle-input {
+  display: none;
+}
+
+.toggle-cont .toggle-label {
   cursor: pointer;
-  box-shadow: 2px 2px 3px #000000b4;
-  /* border-radius: 1.8em;  */
-}
-
-.buttons {
   position: relative;
+  display: inline-block;
   padding: 2px;
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  border-radius: 0.9em;
-  transition: all 0.4s ease;
-  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #272727;
+  border-radius: 9999px;
+  box-sizing: content-box;
+  box-shadow: 0px 0px 12px -6px #fefefe;
 }
 
-.buttons::before {
-  content: "";
+.toggle-cont .toggle-label .cont-label-play {
+  position: relative;
+  width: 15px;
+  aspect-ratio: 1 / 1;
+  background: #5e5e5e;
+  border-radius: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.toggle-cont .toggle-input:checked + .toggle-label .cont-label-play {
+  background: #f43f5e;
+  transform: translateX(30px);
+}
+
+.toggle-cont .toggle-label .label-play {
   position: absolute;
-  inset: 0;
-  margin: auto;
-  border-radius: 0.9em;
-  z-index: -10;
-  filter: blur(0);
-  transition: filter 0.4s ease;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  background: #fefefe;
+  border-radius: 4px;
+  clip-path: polygon(25% 0, 75% 50%, 25% 100%, 25% 51%);
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
 }
 
-.buttons:hover::before {
-  background: linear-gradient(90deg, #03a9f4, #f441a5);
-  filter: blur(1.2em);
+.toggle-cont .toggle-input:checked + .toggle-label .label-play {
+  width: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
-.buttons:active::before {
-  filter: blur(0.2em);
+
+/* .play {
+  width: 10px;
+  height: auto;
 }
+
+.stop {
+    width: 10px;
+    height: auto;
+  } */
 
 .time-spent {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .switch {
-    position: relative;
-    display: inline-block;
-    width: 34px;
-    height: 18px;
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
 }
 
 .switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  opacity: 0;
+  width: 0;
+  height: 0;
 }
 
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #888;
-    border-radius: 18px;
-    transition: 0.4s;
+/* The switch - the box around the speaker*/
+.toggleSwitch {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(39, 39, 39);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  overflow: hidden;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 12px;
-    width: 12px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: 0.4s;
+/* Hide default HTML checkbox */
+#checkboxInput {
+  display: none;
 }
 
-input:checked + .slider {
-    background-color: #4caf50;
+.bell {
+  width: 18px;
 }
 
-input:checked + .slider:before {
-    transform: translateX(16px);
+.bell path {
+  fill: white;
 }
 
+.speaker {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition-duration: 0.3s;
+}
+
+.speaker svg {
+  width: 10px;
+}
+
+.mute-speaker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 3;
+  transition-duration: 0.3s;
+}
+
+.mute-speaker svg {
+  width: 10px;
+}
+
+#checkboxInput:checked + .toggleSwitch .speaker {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+#checkboxInput:checked + .toggleSwitch .mute-speaker {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+#checkboxInput:active + .toggleSwitch {
+  transform: scale(0.7);
+}
+
+#checkboxInput:hover + .toggleSwitch {
+  background-color: rgb(61, 61, 61);
+}
 .graph {
-    width: 100%;
-    border: 2px solid #7D99BE;
-    height: 80px;
-    background: #14143a;
-    border-radius: 10px;
-    margin-top: 10px;
+  width: 100%;
+  border: 2px solid #7d99be;
+  height: 80px;
+  background: #14143a;
+  border-radius: 10px;
+  margin-top: 10px;
 }
