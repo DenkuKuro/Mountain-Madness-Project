@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('canvas');
     const emotionDisplay = document.getElementById('emotion');
     const toggleInput = document.getElementById('toggle');
+    const checkboxInput = document.getElementById('checkboxInput');
+    let mute = false;
+
+    // Add an event listener for the 'change' event
+    checkboxInput.addEventListener('change', (event) => {
+        // Log the state of the mute button
+        mute = event.target.checked;
+        console.log('Mute state updated:', mute ? 'Muted' : 'Unmuted');
+    });
     
     // Create and append the honeycomb div
     const graphContainer = document.querySelector(".graph");
@@ -85,7 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
                     chrome.tabs.sendMessage(tabs[0].id, {
                         action: 'changeBackground',
-                        emotion: result.emotion.toLowerCase()
+                        emotion: result.emotion.toLowerCase(),
+                        mute: mute
                     });
                 });
             } else {
