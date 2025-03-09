@@ -1,30 +1,33 @@
 <link href="popup.css" rel="stylesheet" type="text/css" />
 
 <div class="popup-container">
-    <div class="header">
-        <span class="star">&#9733;</span>
-        <span class="title">Frame 1</span>
-        <span class="settings">&#9881;</span>
+  <div class="header">
+    <span class="star">&#9733;</span>
+  </div>
+  <div class="content">
+    <div class="emotion-box">
+      <span class="icon">&#128444;&#65039;</span>
+      <span class="label">Emotion</span>
+      <span class="status">scanning...</span>
+      <div class="buttons">
+        <button class="button">&#9632;</button>
+      </div>
+      <div class="buttons">
+        <button class="button">&#9654;</button>
+      </div>
     </div>
-    <div class="content">
-        <div class="emotion-box">
-            <span class="icon">&#128444;&#65039;</span>
-            <span class="label">Emotion</span>
-            <span class="status">scanning...</span>
-            <div class="buttons">
-                <button class="stop">&#9632;</button>
-                <button class="play">&#9654;</button>
-            </div>
-        </div>
-        <div class="time-spent">
-            <span>Time spent</span>
-            <label class="switch">
-                <input type="checkbox">
-                <span class="slider"></span>
-            </label>
-        </div>
-        <div class="graph"></div>
+
+    <div class="time-spent">
+      <span>Time spent</span>
+      <label class="switch">
+        <input type="checkbox" />
+        <span class="slider"></span>
+      </label>
     </div>
+    <div class="graph"></div>
+  </div>
 </div>
 
 <script type="module" src="popup.js"></script>
+
+<!-- stroke: 7D99BE -->
