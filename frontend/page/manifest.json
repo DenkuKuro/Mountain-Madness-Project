@@ -1,0 +1,21 @@
+{
+  "name": "Burnout-Tracker",
+  "version": "0.1.0",
+  "description": "Fun interface for mood-tracking",
+  "permissions": ["storage", "tabs"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["Content.js"]
+    }
+  ],
+  "action": {
+    
+    "default_title": "Bookmarks",
+    "default_popup": "popup.html"
+  },
+  "manifest_version": 3
+}
