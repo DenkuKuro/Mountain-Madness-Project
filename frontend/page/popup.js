@@ -10,5 +10,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 4000); // 3 seconds delay
 });
 
-
-

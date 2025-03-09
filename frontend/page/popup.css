@@ -1,31 +1,41 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   /* Happy */
-  --primary-color: #a748f5;
-  --secondary-color: #b669fd;
-  --tertiary-color: #f277ec;
-  --border-color: #ffffff;
-  --toggle-bg: #b669fd;
-  --toggle-active: #f43f5e;
-  --toggle-play: #ff3ace;
-  --text-color: white;
+  /* --primary-color: #b0b02b;
+  --secondary-color: #dae24a;
+  --tertiary-color: #fdffb6;
+  --border-color: #f0f0e2;
+  --toggle-bg: #dde24a;
+  --toggle-active: #827f2c;
+
+  --toggle-play: #7c822c;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e6f7ff;
+  --background-2: #f1ffcc;
+  --background-3: #fffeb3;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
     var(--secondary-color)
-  );
+  ); */
 
   /* Sad */
   /* --primary-color: #2b6cb0;
   --secondary-color: #4a90e2;
-  --tertiary-color: #718096;
+  --tertiary-color: #b6ffff;
   --border-color: #e2e8f0;
   --toggle-bg: #4a90e2;
   --toggle-active: #2c5282;
-  --toggle-play: #5a6a7f;
-  --text-color: white;
+
+  --toggle-play: #2c5282;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e6f7ff;
+  --background-2: #cceeff;
+  --background-3: #b3e6ff;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
@@ -33,15 +43,19 @@
   ); */
 
   /* Fear */
-  /* --primary-color: #4a148c;
-  --secondary-color: #6a1b9a;
-  --tertiary-color: #9c27b0;
-  --border-color: #ffffff;
-  --toggle-bg: #6a1b9a;
-  --toggle-active: #ba68c8;
-  --toggle-play: #8e24aa;
-  --text-color: white;
+  /* --primary-color: #b02b9a;
+  --secondary-color: #e24ad3;
+  --tertiary-color: #ffb6f6;
+  --border-color: #f0e2ef;
+  --toggle-bg: #e24ad5;
+  --toggle-active: #822c77;
+
+  --toggle-play: #822c77;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #ffe6fc;
+  --background-2: #ffccf8;
+  --background-3: #ffb3f6;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
@@ -49,15 +63,19 @@
   ); */
 
   /* Angry */
-  /* --primary-color: #b71c1c;
-  --secondary-color: #d32f2f;
-  --tertiary-color: #ff5252;
-  --border-color: #ffffff;
-  --toggle-bg: #d32f2f;
-  --toggle-active: #f44336;
-  --toggle-play: #ff1744;
-  --text-color: white;
+  /* --primary-color: #b02b2b;
+  --secondary-color: #e24a4a;
+  --tertiary-color: #ffb6b6;
+  --border-color: #f0e2e2;
+  --toggle-bg: #e24a4a;
+  --toggle-active: #822c2c;
+
+  --toggle-play: #822c2c;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #ffe6e6;
+  --background-2: #ffcccc;
+  --background-3: #ffb3b3;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
@@ -65,15 +83,19 @@
   ); */
 
   /* Surprised */
-  /* --primary-color: #ff9800;
-  --secondary-color: #ffb74d;
-  --tertiary-color: #ffcc80;
-  --border-color: #ffffff;
-  --toggle-bg: #ffb74d;
-  --toggle-active: #ff9800;
-  --toggle-play: #ffca28;
-  --text-color: white;
+  /* --primary-color: #b05e2b;
+  --secondary-color: #e27d4a;
+  --tertiary-color: #ffd6b6;
+  --border-color: #f0e8e2;
+  --toggle-bg: #e27a4a;
+  --toggle-active: #824d2c;
+
+  --toggle-play: #824c2c;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #fff3e6;
+  --background-2: #ffdfcc;
+  --background-3: #ffd0b3;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
@@ -81,46 +103,44 @@
   ); */
 
   /* Disgust */
-  /* --primary-color: #1b5e20;
-  --secondary-color: #388e3c;
-  --tertiary-color: #66bb6a;
-  --border-color: #ffffff;
-  --toggle-bg: #388e3c;
-  --toggle-active: #4caf50;
-  --toggle-play: #81c784;
-  --text-color: white;
+  --primary-color: #32b02b;
+  --secondary-color: #63e24a;
+  --tertiary-color: #b6ffbb;
+  --border-color: #e3f0e2;
+  --toggle-bg: #59e24a;
+  --toggle-active: #2c822d;
+
+  --toggle-play: #2c8232;
+  --text-color: black;
   --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e9ffe6;
+  --background-2: #d2ffcc;
+  --background-3: #b3ffb3;
   --background-gradient: linear-gradient(
     135deg,
     var(--tertiary-color),
     var(--secondary-color)
-  ); */
+  );
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-  }
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
 
 .popup-container {
-  width: 100%;
-  height: 100%;
-  --s: 60px;
-  --c1: var(--primary-color);
-  --c2: var(--tertiary-color);
-  --_g: radial-gradient(
-    25% 25% at 25% 25%,
-    var(--c1) 99%,
-    rgba(0, 0, 0, 0) 101%
-  );
-  background: var(--_g) var(--s) var(--s) / calc(2 * var(--s))
-      calc(2 * var(--s)),
-    var(--_g) 0 0 / calc(2 * var(--s)) calc(2 * var(--s)),
-    radial-gradient(50% 50%, var(--c2) 98%, rgba(0, 0, 0, 0)) 0 0 / var(--s)
-      var(--s),
-    repeating-conic-gradient(var(--c2) 0 50%, var(--c1) 0 100%)
-      calc(0.5 * var(--s)) 0 / calc(2 * var(--s)) var(--s);
+  width: 250px;
+  height: 400px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, var(--background-1) 0%, var(--background-2) 50%, var(--background-3) 100%);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .popup-container {
@@ -148,7 +168,7 @@ html, body {
 }
 
 .emotion-box {
-  border: 2px solid var(--border-color);
+  border: 2px solid white;
   background: var(--background-gradient);
   border-radius: 10px;
   padding: 10px;
@@ -158,7 +178,7 @@ html, body {
 }
 
 .emotion-text {
-  margin-left: 0px;
+  margin-left: 4px;
   display: flex;
   flex-direction: column; /* Stack text vertically */
 }
@@ -171,12 +191,12 @@ html, body {
 }
 
 .toggle-cont {
+  top: -1px;
   width: 65px;
-  height: 35px;
+  height: 20px;
   border-radius: 9999px;
-  margin-left: 0px; /* Adjust this value as needed */
   position: relative;
-  left: -15px; /* Moves the toggle switch left */
+  left: -0px; /* Moves the toggle switch left */
 }
 
 .toggle-cont .toggle-input {
@@ -188,7 +208,7 @@ html, body {
   position: relative;
   display: inline-block;
   padding: 2px;
-  width: 100%;
+  width: 80%;
   height: 100%;
   background: var(--toggle-bg);
   border-radius: 9999px;
@@ -198,7 +218,7 @@ html, body {
 
 .toggle-cont .toggle-label .cont-label-play {
   position: relative;
-  width: 35px;
+  width: 20px;
   aspect-ratio: 1 / 1;
   background: var(--toggle-play);
   border-radius: 9999px;
@@ -207,7 +227,7 @@ html, body {
 
 .toggle-cont .toggle-input:checked + .toggle-label .cont-label-play {
   background: var(--toggle-active);
-  transform: translateX(30px);
+  transform: translateX(31px);
 }
 
 .toggle-cont .toggle-label .label-play {
@@ -225,7 +245,7 @@ html, body {
 }
 
 .toggle-cont .toggle-input:checked + .toggle-label .label-play {
-  width: 15px;
+  width: 8px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -268,7 +288,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(39, 39, 39);
+  background-color: var(--toggle-active);
   border-radius: 50%;
   cursor: pointer;
   transition-duration: 0.3s;
@@ -348,7 +368,7 @@ html, body {
 }
 
 /* Trying effects */
-.honeycomb{
+.honeycomb {
   position: relative;
   top: 50px;
   left: 115px;
@@ -406,8 +426,9 @@ html, body {
   width: 24px;
 }
 
-.honeycomb div:after, .honeycomb div:before {
-  content: '';
+.honeycomb div:after,
+.honeycomb div:before {
+  content: "";
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
   position: absolute;
@@ -472,4 +493,11 @@ html, body {
   animation-delay: 0.6s;
   left: 0;
   top: 0;
+}
+
+.camera {
+  height: 20px;
+  width: auto;
+  position: relative;
+  top: 3px;
 }
