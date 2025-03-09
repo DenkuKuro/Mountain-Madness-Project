@@ -2,6 +2,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('webcam');
     const canvas = document.getElementById('canvas');
     const emotionDisplay = document.getElementById('emotion');
+    const toggleInput = document.getElementById('toggle');
+    
+    // Create and append the honeycomb div
+    const graphContainer = document.querySelector(".graph");
+    const honeycombDiv = document.createElement("div");
+    honeycombDiv.classList.add("honeycomb");
+    honeycombDiv.innerHTML = `
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    `;
+    graphContainer.appendChild(honeycombDiv);
+    
+    // Initially hide honeycomb and emotion text
+    honeycombDiv.style.display = "none";
+    emotionDisplay.style.display = "block"; // Initially visible
+
+    // Toggle between honeycomb and video + emotion text on switch click
+    toggleInput.addEventListener('change', () => {
+        if (toggleInput.checked) {
+            video.style.display = "none";
+            emotionDisplay.style.display = "none"; // Hide emotion text
+            honeycombDiv.style.display = "flex";
+        } else {
+            honeycombDiv.style.display = "none";
+            video.style.display = "block";
+            emotionDisplay.style.display = "block"; // Show emotion text again
+        }
+    });
 
     // Check if elements exist
     if (!video || !canvas || !emotionDisplay) {

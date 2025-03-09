@@ -1,32 +1,566 @@
 body {
-    width: 300px;
+  /* width: 300px;
     padding: 10px;
-    font-family: Arial, sans-serif;
-    text-align: center;
+    text-align: center; */
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  /* Happy */
+  /* --primary-color: #b0b02b;
+  --secondary-color: #dae24a;
+  --tertiary-color: #fdffb6;
+  --border-color: #f0f0e2;
+  --toggle-bg: #dde24a;
+  --toggle-active: #827f2c;
+
+  --toggle-play: #7c822c;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e6f7ff;
+  --background-2: #f1ffcc;
+  --background-3: #fffeb3;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Sad */
+  --primary-color: #2b6cb0;
+  --secondary-color: #4a90e2;
+  --tertiary-color: #b6ffff;
+  --border-color: #e2e8f0;
+  --toggle-bg: #4a90e2;
+  --toggle-active: #2c5282;
+
+  --toggle-play: #2c5282;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e6f7ff;
+  --background-2: #cceeff;
+  --background-3: #b3e6ff;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  );
+
+  /* Fear */
+  /* --primary-color: #b02b9a;
+  --secondary-color: #e24ad3;
+  --tertiary-color: #ffb6f6;
+  --border-color: #f0e2ef;
+  --toggle-bg: #e24ad5;
+  --toggle-active: #822c77;
+
+  --toggle-play: #822c77;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #ffe6fc;
+  --background-2: #ffccf8;
+  --background-3: #ffb3f6;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Angry */
+  /* --primary-color: #b02b2b;
+  --secondary-color: #e24a4a;
+  --tertiary-color: #ffb6b6;
+  --border-color: #f0e2e2;
+  --toggle-bg: #e24a4a;
+  --toggle-active: #822c2c;
+
+  --toggle-play: #822c2c;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #ffe6e6;
+  --background-2: #ffcccc;
+  --background-3: #ffb3b3;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Surprised */
+  /* --primary-color: #b05e2b;
+  --secondary-color: #e27d4a;
+  --tertiary-color: #ffd6b6;
+  --border-color: #f0e8e2;
+  --toggle-bg: #e27a4a;
+  --toggle-active: #824d2c;
+
+  --toggle-play: #824c2c;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #fff3e6;
+  --background-2: #ffdfcc;
+  --background-3: #ffd0b3;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Disgust */
+  /* --primary-color: #32b02b;
+  --secondary-color: #63e24a;
+  --tertiary-color: #b6ffbb;
+  --border-color: #e3f0e2;
+  --toggle-bg: #59e24a;
+  --toggle-active: #2c822d;
+
+  --toggle-play: #2c8232;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #e9ffe6;
+  --background-2: #d2ffcc;
+  --background-3: #b3ffb3;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+
+  /* Neutral */
+  /* --primary-color: #b02bac;
+  --secondary-color: #e24adf;
+  --tertiary-color: #ffb6fd;
+  --border-color: #eee2f0;
+  --toggle-bg: #e24acb;
+  --toggle-active: #822c79;
+
+  --toggle-play: #822c81;
+  --text-color: black;
+  --shadow-color: rgba(255, 255, 255, 0.2);
+  --background-1: #ffe6fc;
+  --background-2: #ffccfc;
+  --background-3: #ffb3f6;
+  --background-gradient: linear-gradient(
+    135deg,
+    var(--tertiary-color),
+    var(--secondary-color)
+  ); */
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+.popup-container {
+  width: 250px;
+  height: 500px;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  color: black;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: linear-gradient(
+    180deg,
+    var(--background-1) 0%,
+    var(--background-2) 50%,
+    var(--background-3) 100%
+  );
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.popup-container {
+  width: 250px;
+  height: 300px;
+  padding: 0px;
+  font-family: "Poppins", sans-serif;
+  color: var(--text-color);
+  border-radius: 00px;
+  padding: 10px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(8px);
+}
+
+.icon {
+  width: 20px; /* Adjust width */
+  height: auto; /* Maintain aspect ratio */
+  display: block;
+  z-index: 1000;
+}
+
+.content {
+  margin-top: 00px;
+}
+
+.emotion-box {
+  border: 2px solid white;
+  background: var(--background-gradient);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.emotion-text {
+  margin-left: 4px;
+  display: flex;
+  flex-direction: column; /* Stack text vertically */
+}
+
+.label {
+  /* font-weight: bold; */
+  position: relative;
+  left: 5px;
+  font-size: 15px;
+}
+
+.toggle-cont {
+  top: -1px;
+  width: 65px;
+  height: 20px;
+  border-radius: 9999px;
+  position: relative;
+  left: -0px; /* Moves the toggle switch left */
+}
+
+.toggle-cont .toggle-input {
+  display: none;
+}
+
+.toggle-cont .toggle-label {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  padding: 2px;
+  width: 80%;
+  height: 100%;
+  background: var(--toggle-bg);
+  border-radius: 9999px;
+  box-sizing: content-box;
+  box-shadow: 0px 0px 12px -6px #fefefe;
+}
+
+.toggle-cont .toggle-label .cont-label-play {
+  position: relative;
+  width: 20px;
+  aspect-ratio: 1 / 1;
+  background: var(--toggle-play);
+  border-radius: 9999px;
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.toggle-cont .toggle-input:checked + .toggle-label .cont-label-play {
+  background: var(--toggle-active);
+  transform: translateX(31px);
+}
+
+.toggle-cont .toggle-label .label-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 50%;
+  aspect-ratio: 1 / 1;
+  background: #fefefe;
+  border-radius: 4px;
+  clip-path: polygon(25% 0, 75% 50%, 25% 100%, 25% 51%);
+  transition: all 0.5s cubic-bezier(1, 0, 0, 1);
+}
+
+.toggle-cont .toggle-input:checked + .toggle-label .label-play {
+  width: 8px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* .play {
+  width: 10px;
+  height: auto;
+}
+
+.stop {
+    width: 10px;
+    height: auto;
+  } */
+
+.time-spent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 34px;
+  height: 18px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The switch - the box around the speaker*/
+.toggleSwitch {
+  left: 25px;
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--toggle-active);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* Hide default HTML checkbox */
+#checkboxInput {
+  display: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: white;
+}
+
+.speaker {
+  width: 100%;
+  height: 100%;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  transition-duration: 0.3s;
+  background-color: var(--primary-color);
+}
+
+.speaker svg {
+  width: 10px;
+}
+
+.mute-speaker {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  z-index: 3;
+  transition-duration: 0.3s;
+}
+
+.mute-speaker svg {
+  width: 10px;
+}
+
+#checkboxInput:checked + .toggleSwitch .speaker {
+  opacity: 0;
+  transition-duration: 0.3s;
+}
+
+#checkboxInput:checked + .toggleSwitch .mute-speaker {
+  opacity: 1;
+  transition-duration: 0.3s;
+}
+
+#checkboxInput:active + .toggleSwitch {
+  transform: scale(0.7);
+}
+
+#checkboxInput:hover + .toggleSwitch {
+  background-color: var(--toggle-active);
+}
+.graph {
+  width: 100%;
+  border: 2px solid var(--border-color);
+  height: 180px;
+  background: var(--background-gradient);
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Trying effects */
+.honeycomb {
+  position: relative;
+  top: 50px;
+  left: 115px;
+}
+
+@-webkit-keyframes honeycomb {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes honeycomb {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.honeycomb {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.honeycomb div {
+  -webkit-animation: honeycomb 2.1s infinite backwards;
+  animation: honeycomb 2.1s infinite backwards;
+  background: #f3f3f3;
+  height: 12px;
+  margin-top: 6px;
+  position: absolute;
+  width: 24px;
+}
+
+.honeycomb div:after,
+.honeycomb div:before {
+  content: "";
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.honeycomb div:after {
+  top: -6px;
+  border-bottom: 6px solid #f3f3f3;
+}
+
+.honeycomb div:before {
+  bottom: -6px;
+  border-top: 6px solid #f3f3f3;
+}
+
+.honeycomb div:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  left: -28px;
+  top: 0;
+}
+
+.honeycomb div:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  left: -14px;
+  top: 22px;
+}
+
+.honeycomb div:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  left: 14px;
+  top: 22px;
+}
+
+.honeycomb div:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  left: 28px;
+  top: 0;
+}
+
+.honeycomb div:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  left: 14px;
+  top: -22px;
+}
+
+.honeycomb div:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  left: -14px;
+  top: -22px;
+}
+
+.honeycomb div:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  left: 0;
+  top: 0;
+}
+
+.camera {
+  height: 20px;
+  width: auto;
+  position: relative;
+  top: 3px;
 }
 
 video {
-    width: 100%;
-    border: 2px solid #ccc;
-    border-radius: 5px;
-    margin-top: 10px;
+  width: 100%;
+  position: relative;
+  top: -28px;
+  height: 178px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-top: 10px;
+  z-index: 1;
 }
 
 #emotion {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 10px;
+  position: fixed;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: -20px;
 }
 
 #emotion-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* Default semi-transparent dark tint */
-    z-index: 9999;
-    pointer-events: none; /* Allow interactions with elements below */
-    opacity: 0; /* Start with no visibility */
-    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Default semi-transparent dark tint */
+  z-index: 9999;
+  pointer-events: none; /* Allow interactions with elements below */
+  opacity: 0; /* Start with no visibility */
+  transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
 }

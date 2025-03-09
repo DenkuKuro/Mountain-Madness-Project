@@ -23,22 +23,22 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
         switch (emotion) {
             case 'fear':
-                tintColor = 'rgba(0, 0, 139, 0.3)'; // Dark Blue Tint
+                tintColor = 'rgba(17, 212, 192, 0.15)'; // Dark Blue Tint
                 negativeEmotionDetected = true;
                 break;
             case 'happy':
-                tintColor = 'rgba(255, 255, 0, 0.3)'; // Yellow Tint
+                tintColor = 'rgba(232, 232, 80, 0.15)'; // Yellow Tint
                 break;
             case 'sad':
-                tintColor = 'rgba(169, 169, 169, 0.3)'; // Gray Tint
+                tintColor = 'rgba(47, 30, 233, 0.15)'; // Blue Tint
                 negativeEmotionDetected = true;
                 break;
             case 'angry':
-                tintColor = 'rgba(255, 0, 0, 0.3)'; // Red Tint
+                tintColor = 'rgba(255, 0, 0, 0.15)'; // Red Tint
                 negativeEmotionDetected = true;
                 break;
             case 'surprised':
-                tintColor = 'rgba(128, 0, 128, 0.3)'; // Purple Tint
+                tintColor = 'rgba(183, 28, 183, 0.15)'; // Purple Tint
                 break;
             case 'disgust':
                 tintColor = 'rgba(0, 128, 0, 0.3)'; // Green Tint
@@ -77,21 +77,29 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             helpMessage.style.transform = 'translate(-50%, -50%)';
             helpMessage.style.backgroundColor = 'white';
             helpMessage.style.padding = '20px';
-            helpMessage.style.border = '2px solid black';
+            helpMessage.style.borderRadius = '12px';
+            helpMessage.style.border = 'none';
             helpMessage.style.zIndex = '10000';
-            helpMessage.style.boxShadow = '0px 0px 10px rgba(0, 0, 0, 0.3)';
+            helpMessage.style.boxShadow = '0px 10px 20px rgba(0, 0, 0, 0.2)';
             helpMessage.style.fontSize = '18px';
             helpMessage.style.textAlign = 'center';
+            helpMessage.style.maxWidth = '320px';
+            helpMessage.style.color = '#333';
+            helpMessage.style.fontFamily = '"Poppins", sans-serif';
 
-            let messageText = '';
+            let messageText = document.createElement('p');
+            messageText.style.marginBottom = '15px';
+            messageText.style.fontWeight = '500';
+
             if (emotion === 'angry') {
-                messageText = 'It seems like you are angry. Take a deep breath and relax.';
+                messageText.textContent = 'It seems like you are feeling angry. Take a deep breath and relax.';
             } else if (emotion === 'fear') {
-                messageText = 'You might be feeling scared. Try to calm down and feel safe.';
+                messageText.textContent = 'You might be feeling scared. Try to calm down and feel safe.';
             } else if (emotion === 'sad') {
-                messageText = 'You might be feeling sad. Take a deep breath and relax.';
+                messageText.textContent = 'You might be feeling sad. Remember, it’s okay to feel this way. Breathe.';
             }
-            helpMessage.textContent = messageText;
+
+            helpMessage.appendChild(messageText);
 
             // Remove existing button before adding a new one to prevent duplicates
             let existingButton = document.getElementById('help-ok-button');
@@ -103,8 +111,26 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             button.id = 'help-ok-button';
             button.textContent = 'OK';
             button.style.marginTop = '10px';
-            button.style.padding = '10px';
+            button.style.padding = '12px 20px';
             button.style.fontSize = '16px';
+            button.style.fontWeight = '600';
+            button.style.backgroundColor = '#4CAF50';
+            button.style.color = 'white';
+            button.style.border = 'none';
+            button.style.borderRadius = '6px';
+            button.style.cursor = 'pointer';
+            button.style.transition = '0.3s ease-in-out';
+            button.style.outline = 'none';
+            button.style.boxShadow = '0px 4px 8px rgba(0, 0, 0, 0.2)';
+            
+            // Hover effect
+            button.onmouseover = () => {
+                button.style.backgroundColor = '#45A049';
+            };
+
+            button.onmouseout = () => {
+                button.style.backgroundColor = '#4CAF50';
+            };
 
             button.onclick = function () {
                 // Reset the negative emotion tracking
