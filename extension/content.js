@@ -40,7 +40,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         console.log(message.mute);
         // Play the corresponding sound for the detected emotion
         if (!message.mute) playSound(emotion.toLowerCase());
-        
+
         let overlay = document.getElementById('emotion-overlay');
         if (!overlay) {
             overlay = document.createElement('div');
@@ -114,6 +114,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             helpMessage.style.textAlign = 'center';
             helpMessage.style.opacity = '1';
             helpMessage.style.transition = 'opacity 0.5s ease-in-out';
+            helpMessage.style.color = 'black';
 
             let messageText = '';
             if (emotion === 'angry') {
