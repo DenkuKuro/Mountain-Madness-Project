@@ -2,6 +2,7 @@ let negativeEmotionDetected = false; // Boolean to track negative emotions
 let waitingForUser = false; // Prevents further changes until message disappears
 let cooldownActive = false; // Prevents popups for 3 seconds after closing
 let currentAudio = null;
+let soundPlaying = false;
 
 function playSound(emotion) {
     const soundMap = {
@@ -14,18 +15,31 @@ function playSound(emotion) {
     };
 
     const soundFile = soundMap[emotion];
-    if (soundFile) {
-        const audio = new Audio(soundFile);
-        audio.play().catch((error) => {
-            console.error('Error playing sound:', error);
-        });
-        console.log("playing");
-        // Stop the sound after 3 seconds
-        setTimeout(() => {
-            audio.pause(); // Pause the sound
-            audio.currentTime = 0; // Reset the playback position (optional)
-        }, 3000); // 3000 milliseconds = 3 seconds
+    if (!soundFile) return;
+
+    // Stop any currently playing audio before playing a new one
+    if (currentAudio) {
+        currentAudio.pause(); // Stop current audio
+        currentAudio.currentTime = 0; // Reset playback position
     }
+
+    // Create a new Audio instance and assign it to currentAudio
+    currentAudio = new Audio(soundFile);
+    currentAudio.play().catch(error => {
+        console.error('Error playing sound:', error);
+    });
+
+    console.log("Playing sound:", emotion);
+
+    // Ensure the sound stops after 3 seconds
+    setTimeout(() => {
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
+            currentAudio = null; // Clear the reference after stopping
+        }
+    }, 3000);
+    soundPlaying = false;
 }
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -38,8 +52,8 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
         }
 
         // Play the corresponding sound for the detected emotion
-        playSound(emotion.toLowerCase());
-
+        if (!soundPlaying) playSound(emotion.toLowerCase());
+        soundPlaying = true;
         // Create or find the overlay element
         let overlay = document.getElementById('emotion-overlay');
         if (!overlay) {
