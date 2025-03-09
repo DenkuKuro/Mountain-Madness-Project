@@ -4,6 +4,7 @@ from deepface import DeepFace
 import numpy as np
 import base64
 from collections import deque, Counter
+from sound_player import play_sound, stop_sound
 import time
 
 app = Flask(__name__)
@@ -21,6 +22,7 @@ last_add_time = time.time()
 # Set the sample rate (0.1 seconds)
 sample_rate = 0.1
 print_rate = 1.0  # Print most frequent emotion every 1 second
+
 
 @app.route('/detect_emotion', methods=['POST'])
 def detect_emotion():

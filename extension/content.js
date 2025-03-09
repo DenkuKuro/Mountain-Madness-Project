@@ -2,6 +2,31 @@ let negativeEmotionDetected = false; // Boolean to track negative emotions
 let waitingForUser = false; // Prevents further changes until message disappears
 let cooldownActive = false; // Prevents popups for 3 seconds after closing
 
+function playSound(emotion) {
+    const soundMap = {
+        fear: chrome.runtime.getURL('sounds/fear.mp3'),
+        happy: chrome.runtime.getURL('sounds/happy.mp3'),
+        sad: chrome.runtime.getURL('sounds/sad.mp3'),
+        angry: chrome.runtime.getURL('sounds/angry.mp3'),
+        surprised: chrome.runtime.getURL('sounds/surprised.mp3'),
+        disgust: chrome.runtime.getURL('sounds/disgust.mp3'),
+    };
+
+    const soundFile = soundMap[emotion];
+    if (soundFile) {
+        const audio = new Audio(soundFile);
+        audio.play().catch((error) => {
+            console.error('Error playing sound:', error);
+        });
+        console.log("playing");
+        // Stop the sound after 3 seconds
+        setTimeout(() => {
+            audio.pause(); // Pause the sound
+            audio.currentTime = 0; // Reset the playback position (optional)
+        }, 3000); // 3000 milliseconds = 3 seconds
+    }
+}
+
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === 'changeBackground') {
         const emotion = message.emotion;
@@ -11,12 +36,15 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             return;
         }
 
+        // Play the corresponding sound for the detected emotion
+        playSound(emotion.toLowerCase());
+
         // Create or find the overlay element
         let overlay = document.getElementById('emotion-overlay');
         if (!overlay) {
             overlay = document.createElement('div');
             overlay.id = 'emotion-overlay';
-            document.body.appendChild(overlay);
+            document.body.appendChild(overlay); 
         }
 
         // Set the tint color based on the detected emotion
