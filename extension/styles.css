@@ -17,3 +17,16 @@ video {
     font-weight: bold;
     margin-top: 10px;
 }
+
+#emotion-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5); /* Default semi-transparent dark tint */
+    z-index: 9999;
+    pointer-events: none; /* Allow interactions with elements below */
+    opacity: 0; /* Start with no visibility */
+    transition: background-color 1s ease-in-out, opacity 1s ease-in-out;
+}
